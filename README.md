@@ -36,3 +36,8 @@ Aplikasi ini adalah aplikasi untuk listing data customer
 Referensi:
 - <img src="https://avatars3.githubusercontent.com/u/958072?s=200&v=4" width="12px"></img> [Laravel](https://laravel.com/docs/7.x)
 - <img src="https://avatars0.githubusercontent.com/u/15017015?s=200&v=4" width="12px"></img> [BackPack](https://backpackforlaravel.com/docs)
+
+## Contact
+
+**[Stefanus E. Prasetyo](mailto:stefanus@yayasanvitka.id)**
+**[Adli I. Ifkar](mailto:adly@yayasanvitka.id)**
