@@ -8,6 +8,14 @@ Lakukan <strong>Pull Request </strong> untuk challange di bawah ini:
 3. Filtering customer berdasarkan address_types
 4. Buat API untuk data customers dengan format API {“data”:[…], “count”:X}
 
+### Skill Requirement
+- PHP
+- CSS
+- understand Laravel framework
+- JavaScript
+- Understand GIT and able to use it in workflow
+- Understand MySQL
+
 ### Detail Tentang Aplikasi
 Aplikasi ini adalah aplikasi untuk listing data customer
 
