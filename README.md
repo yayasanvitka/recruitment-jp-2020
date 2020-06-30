@@ -29,6 +29,10 @@ Aplikasi ini adalah aplikasi untuk listing data customer
 3. Pada list customers, silahkan tambahkan filtering untuk `customers` sesuai dengan tipe yang ada pada `address_types`
 4. Buat API pada `/api/customers` untuk listing data `customers` dengan format: `{“data”:[…], “count”:X}`
 
+### Rules Tambahan
+1. Setiap point dalam challenge harus di submit dalam `commit` dan `pull request` yang terpisah.
+2. Peserta tidak harus menyelesaikan seluruh challenge, namun bobot penilaian tentunya akan lebih tinggi jika peserta mampu menyelesaikan seluruh challenge yang diberikan.
+
 Referensi:
 - <img src="https://avatars3.githubusercontent.com/u/958072?s=200&v=4" width="12px"></img> [Laravel](https://laravel.com/docs/7.x)
 - <img src="https://avatars0.githubusercontent.com/u/15017015?s=200&v=4" width="12px"></img> [BackPack](https://backpackforlaravel.com/docs)
