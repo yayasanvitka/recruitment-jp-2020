@@ -19,5 +19,5 @@ Aplikasi ini adalah aplikasi untuk listing data customer
 4. Buat API pada `/api/customers` untuk listing data `customers` dengan format: `{“data”:[…], “count”:X}`
 
 Referensi:
-- [Laravel](https://laravel.com/docs/7.x)
-- [BackPack](https://backpackforlaravel.com/docs)
+- <img src="https://avatars3.githubusercontent.com/u/958072?s=200&v=4" width="12px"></img> [Laravel](https://laravel.com/docs/7.x)
+- <img src="https://avatars0.githubusercontent.com/u/15017015?s=200&v=4" width="12px"></img> [BackPack](https://backpackforlaravel.com/docs)
