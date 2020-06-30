@@ -8,6 +8,9 @@ Lakukan <strong>Pull Request </strong> untuk challange di bawah ini:
 3. Filtering customer berdasarkan address_types
 4. Buat API untuk data customers dengan format API {“data”:[…], “count”:X}
 
+## Batas Waktu pengerjaan
+Maksimal 7 Hari setelah forking. **Lebih cepat lebih baik**
+
 ### Skill Requirement
 - PHP
 - CSS
