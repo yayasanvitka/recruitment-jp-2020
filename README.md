@@ -39,5 +39,5 @@ Referensi:
 
 ## Contact
 
-**[Stefanus E. Prasetyo](mailto:stefanus@yayasanvitka.id)**
+**[Stefanus E. Prasetyo](mailto:stefanus@yayasanvitka.id)** <br/>
 **[Adli I. Ifkar](mailto:adly@yayasanvitka.id)**
