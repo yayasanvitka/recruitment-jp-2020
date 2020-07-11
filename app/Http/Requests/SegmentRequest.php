@@ -26,7 +26,7 @@ class SegmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'code' => 'required|min:3|max:2|unique:segments,code,' . request()->id,
+            'code' => 'required|min:2|max:2|unique:segments,code,' . request()->id,
             'name' => 'required|min:5|max:255'
         ];
     }
