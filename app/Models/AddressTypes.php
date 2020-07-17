@@ -16,12 +16,15 @@ class AddressTypes extends Model
     */
 
     protected $table = 'address_types';
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['city', 'state', 'street', 'zip'];
     // protected $hidden = [];
-    // protected $dates = [];
+    protected $dates = [
+        'created_at',
+        'updated_at'
+    ];
 
     /*
     |--------------------------------------------------------------------------

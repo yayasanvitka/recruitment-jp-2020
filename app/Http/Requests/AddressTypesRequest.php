@@ -30,7 +30,7 @@ class AddressTypesRequest extends FormRequest
             'city' => 'required',
             'state' => 'required',
             'street' => 'nullable',
-            'zip' => 'nullable'
+            'zip' => 'nullable|numeric'
         ];
     }
 
