@@ -68,6 +68,10 @@ class CustomerCrudController extends CrudController
                 'name' => 'email',
                 'type' => 'email',
             ],
+            [
+                'label' => 'Address',
+                'name' => 'address',
+            ],
         ]);
 
         /**
@@ -108,6 +112,11 @@ class CustomerCrudController extends CrudController
                 'tab' => 'Basic Information'
             ],
             [
+                'label' => 'Segment',
+                'name' => 'type.segment',
+                'tab' => 'Basic Information'
+            ],
+            [
                 'label' => 'Type',
                 'name' => 'type_id',
                 'allows_null' => true,
@@ -123,6 +132,11 @@ class CustomerCrudController extends CrudController
                 'name' => 'email',
                 'type' => 'email',
                 'tab' => 'Contact'
+            ],
+            [
+                'label' => 'Address',
+                'name' => 'address',
+                'tab' => 'Address',
             ],
         ]);
 

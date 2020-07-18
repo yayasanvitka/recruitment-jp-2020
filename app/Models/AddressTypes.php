@@ -38,6 +38,11 @@ class AddressTypes extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function Customer()
+    {
+        return $this->belongsToMany('App\Customer', 'address_customer', 'id_address', 'id_customer');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

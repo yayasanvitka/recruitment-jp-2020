@@ -62,6 +62,11 @@ class Customer extends Model
         return $this->belongsTo(Type::class, 'type_id', 'id');
     }
 
+    public function address()
+    {
+        return $this->belongsToMany(AddressTypes::class, 'address_customer', 'id_customer', 'id_address')->withTimestamps();
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
