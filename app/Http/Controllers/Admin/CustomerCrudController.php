@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CustomerRequest;
+use App\Models\AddressTypes;
+use App\Models\Customer;
+use App\Models\Segment;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -68,7 +71,36 @@ class CustomerCrudController extends CrudController
                 'name' => 'email',
                 'type' => 'email',
             ],
+            [
+                'label' => 'Address',
+                'name' => 'address',
+            ],
         ]);
+
+        // $this->crud->addFilter(
+        //     [
+        //         'type' => 'select2',
+        //         'name' => 'address',
+        //         'label' => 'Address Filter',
+        //     ],
+        //     function () {
+        //         return AddressTypes::select('city')->distinct()->get()->pluck('city', 'city')->toArray();
+        //     },
+        //     function () {
+        //     }
+        // );
+
+
+        $this->crud->addFilter([ // select2_multiple filter
+            'name' => 'address',
+            'type' => 'dropdown',
+            'label' => 'City'
+        ], function () { // the options that show up in the select2
+            return AddressTypes::orderBy('city', 'ASC')->pluck('city', 'id')->toArray();
+        }, function ($value) { // if the filter is active
+            $this->crud->addClause('join', 'address_customer', 'customers.id', 'address_customer.id_customer');
+            $this->crud->addClause('where', 'id_address', $value);
+        });
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -108,6 +140,11 @@ class CustomerCrudController extends CrudController
                 'tab' => 'Basic Information'
             ],
             [
+                'label' => 'Segment',
+                'name' => 'type.segment',
+                'tab' => 'Basic Information'
+            ],
+            [
                 'label' => 'Type',
                 'name' => 'type_id',
                 'allows_null' => true,
@@ -123,6 +160,11 @@ class CustomerCrudController extends CrudController
                 'name' => 'email',
                 'type' => 'email',
                 'tab' => 'Contact'
+            ],
+            [
+                'label' => 'Address',
+                'name' => 'address',
+                'tab' => 'Address',
             ],
         ]);
 
