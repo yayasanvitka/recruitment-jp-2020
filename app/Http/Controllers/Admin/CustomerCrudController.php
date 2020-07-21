@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CustomerRequest;
+use App\Http\Requests;
 use App\Models\AddressTypes;
 use App\Models\Customer;
 use App\Models\Segment;
+use App\Http\Resources\Customers as CustomerResource;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -43,6 +45,7 @@ class CustomerCrudController extends CrudController
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
+
     protected function setupListOperation()
     {
         $this->crud->addColumns([
@@ -77,20 +80,6 @@ class CustomerCrudController extends CrudController
             ],
         ]);
 
-        // $this->crud->addFilter(
-        //     [
-        //         'type' => 'select2',
-        //         'name' => 'address',
-        //         'label' => 'Address Filter',
-        //     ],
-        //     function () {
-        //         return AddressTypes::select('city')->distinct()->get()->pluck('city', 'city')->toArray();
-        //     },
-        //     function () {
-        //     }
-        // );
-
-
         $this->crud->addFilter([ // select2_multiple filter
             'name' => 'address',
             'type' => 'dropdown',
@@ -102,11 +91,18 @@ class CustomerCrudController extends CrudController
             $this->crud->addClause('where', 'id_address', $value);
         });
 
+
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
+    }
+
+    public function indexapi()
+    {
+        $customers = Customer::paginate(15);
+        return CustomerResource::collection($customers);
     }
 
     /**

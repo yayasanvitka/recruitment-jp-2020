@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// //List customers Testing
+// Route::get('/customers', function () {
+//     $customer = [
+//         'first_name' => 'Chen',
+//         'last_name' => 'Indra',
+//     ];
+//     return $customer;
+// });
+
+Route::get('/customers', 'Admin\CustomerCrudController@indexapi');
