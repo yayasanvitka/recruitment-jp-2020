@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SegmentRequest extends FormRequest
+class AddressTypesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,11 @@ class SegmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'code' => 'required|min:2|max:2|unique:segments,code,' . request()->id,
-            'name' => 'required|min:5|max:255'
+            // 'name' => 'required|min:5|max:255'
+            'city' => 'required',
+            'state' => 'required',
+            'street' => 'nullable',
+            'zip' => 'nullable|numeric'
         ];
     }
 
