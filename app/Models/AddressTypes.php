@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
-class Customer extends Model
+class AddressTypes extends Model
 {
     use CrudTrait;
 
@@ -16,17 +15,11 @@ class Customer extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'customers';
+    protected $table = 'address_types';
     protected $primaryKey = 'id';
+    // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = [
-        'uuid',
-        'code',
-        'type_id',
-        'name',
-        'phone',
-        'email',
-    ];
+    protected $fillable = ['city', 'state', 'street', 'zip'];
     // protected $hidden = [];
     protected $dates = [
         'created_at',
@@ -38,33 +31,16 @@ class Customer extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($model) {
-            if (is_null($model->uuid)) {
-                $model->uuid = Str::orderedUuid()->toString();
-            }
-
-            if (is_null($model->code)) {
-                $model->code = (int) substr(mt_rand(), 0, 9);
-            }
-        });
-    }
 
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function type()
-    {
-        return $this->belongsTo(Type::class, 'type_id', 'id');
-    }
 
-    public function address()
+    public function Customer()
     {
-        return $this->belongsToMany(AddressTypes::class, 'address_customer', 'id_customer', 'id_address')->withTimestamps();
+        return $this->belongsToMany('App\Customer', 'address_customer', 'id_address', 'id_customer');
     }
 
     /*

@@ -26,5 +26,10 @@
                 <i class="la "></i> Type
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ backpack_url('/settings/addresstypes') }}">
+                <i class="la "></i> Address Type
+            </a>
+        </li>
     </ul>
 </li>
