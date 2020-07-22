@@ -15,7 +15,7 @@ class CreateTableAddressCustomer extends Migration
     {
         Schema::create('address_customer', function (Blueprint $table) {
             // Create table address_customer
-            $table->integer('id_customer')->unsigned()->index();
+            $table->bigInteger('id_customer')->unsigned()->index();
             $table->integer('id_address')->unsigned()->index();
             $table->timestamps();
 
